@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class ExerciciosPropostos {
+public class ExerciciosPropostosList {
   /*
    * Faça um programa que receba a temperatura média dos 6 primeiros meses do
    * ano e armazene-as em uma lista. Após isto, calcule a média semestral
@@ -73,6 +73,8 @@ public class ExerciciosPropostos {
       Double mes = input.nextDouble();
 
       mediaTemperaturasSemestral.add(mes);
+
+      input.close();
     }
     Iterator<Double> interatorMedia = mediaTemperaturasSemestral.iterator();
 
@@ -111,6 +113,8 @@ public class ExerciciosPropostos {
 
       if (resposta == 1)
         respostaPositivas++;
+
+      input.close();
     }
 
     String nivelDeSuspeita;
