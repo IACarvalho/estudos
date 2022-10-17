@@ -173,3 +173,39 @@ Para criar uma nova chave, use **Map.put/3**
 map = %{foo: "bar", hello: "world"}
 map = Map.put(map, :key, "value")
 ```
+
+## Enum
+Existe mais de 70 funções para trabalhar com enumeráveis, a única coleção não enumerável no elixir é a tupla. Ou seja essas funções podem ser usadas em todas as coleções ocm exceção da tupla.
+
+* ### all?
+A função **all?/2** recebe como parâmetro uma coleção e uma função anônima, irá verificar cada elemento com a função e caso passe retorna true, caso contrário retorna false.
+```elixir
+colecao = ["foo", "bar", "hello"]
+Enum.all?(colecao, fn(s) -> String.length(s) == 3 end) # false
+Enum.all?(colecao, fn(s) -> String.length(s) > 1 end) # true
+```
+
+* ###any?
+Diferente do anterior o **any?/2** apenas um elemento precisa atender ao requisito
+```elixir
+colecao = ["foo", "bar", "hello"]
+Enum.any?(colecao, fn(s) -> String.length(s) == 5 end) # true
+```
+
+* ### chunk_every
+Função para quebrar uma coleção eu várias coleções menores, usando o **chunk_every/2** no primeiro argumetno é passado uma coleção e no segundo o tamanho das novas coleções
+
+```elixir
+colecao = [1, 2, 3, 4, 5, 6]
+Enum.chunk_every(colecao, 2) # [[1, 2], [3, 4], [5, 6]]
+```
+
+* ### chunk_by
+Se necessita agrupar uma coleção baseado em algo diferente do tamanho, podemos usar a função **chunk_by/2**. Ela recebe um enumerável e uma função, e quando o retorno desta função muda, um novo grupo é iniciado e começa a criação do próximo:
+Pessoalmente achei o conseito meio estranho, por isso copiei o conseito do site elixir school
+```elixir
+Enum.chunk_by(["one", "two", "three", "four", "five"], fn(x) -> String.length(x) end)
+[["one", "two"], ["three"], ["four", "five"]]
+Enum.chunk_by(["one", "two", "three", "four", "five", "six"], fn(x) -> String.length(x) end)
+[["one", "two"], ["three"], ["four", "five"], ["six"]]
+```
