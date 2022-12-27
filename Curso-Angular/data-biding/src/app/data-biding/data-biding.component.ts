@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-data-biding',
@@ -10,6 +10,9 @@ export class DataBidingComponent {
   url: string = 'http://loiane.com'
   cursoAngular: boolean = true
   urlImage: string = 'https://picsum.photos/seed/picsum/400/200'
+  valorAtual: string = ''
+  valorSalvo: string = ''
+  isMouseOver: boolean = false
 
   getValor(): number {
     return 1
@@ -17,6 +20,21 @@ export class DataBidingComponent {
 
   getCurtirCurso(): boolean {
     return true
+  }
+
+  botaoClicado(): void {
+    alert('Botão clucado!')
+  }
+
+  onKeyUp(event: KeyboardEvent): void{
+    this.valorAtual = (<HTMLInputElement>event.target).value
+  }
+  salvarValor(value: string) : void {
+    this.valorSalvo = value
+  }
+
+  onMouseOverOut(): void {
+    this.isMouseOver = !this.isMouseOver
   }
 
 }
