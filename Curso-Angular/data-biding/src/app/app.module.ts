@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { AppComponent } from './app.component';
 import { DataBidingComponent } from './data-biding/data-biding.component';
@@ -10,7 +11,8 @@ import { DataBidingComponent } from './data-biding/data-biding.component';
     DataBidingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
