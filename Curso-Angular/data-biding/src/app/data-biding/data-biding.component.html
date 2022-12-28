@@ -92,3 +92,34 @@
     </span>
   </article>
 </section>
+<br/>
+
+<section class="two-way-binding">
+  <article>
+    <h3>two-way data binding</h3>
+    <div>
+      <input
+        type="text"
+        [value]="nome"
+        #inputNome
+        (input)="setNome(inputNome.value)"
+      />
+
+      <input type="text" [ngModel]="nome" (ngModelChange)="setNome($event)">
+
+      <input type="text" [(ngModel)]="nome">
+      <input type="text" bindon-ngModel="nome">
+
+      <p>Você digitou o nome: {{ nome }}</p>
+    </div>
+    <br>
+    <br>
+
+    <div>
+      <input type="text" [(ngModel)]="pessoa.name">
+      <input type="text" [(ngModel)]="pessoa.age">
+      <br>
+      <p>Meu nome é {{ pessoa.name }} e tenho {{ pessoa.age }} anos</p>
+    </div>
+  </article>
+</section>

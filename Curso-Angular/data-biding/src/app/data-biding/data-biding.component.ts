@@ -13,6 +13,11 @@ export class DataBidingComponent {
   valorAtual: string = ''
   valorSalvo: string = ''
   isMouseOver: boolean = false
+  nome: string = 'Israel'
+  pessoa: any =  {
+    name: '',
+    age: 0
+  }
 
   getValor(): number {
     return 1
@@ -35,6 +40,10 @@ export class DataBidingComponent {
 
   onMouseOverOut(): void {
     this.isMouseOver = !this.isMouseOver
+  }
+
+  setNome(value: string): void {
+    this.nome = value
   }
 
 }
