@@ -1,19 +1,21 @@
 public class App {
   public static void main(String[] args) {
-    Gerente gerente = new Gerente();
-        gerente.setNome("Marco");
-        gerente.setCpf("235568413");
-        gerente.setSalario(5000.0);
+    
+    Funcionario gerente = new Gerente();
+    gerente.setNome("Fulano");
+    gerente.setSalario(5000.0);
 
-        System.out.println(gerente.getNome());
-        System.out.println(gerente.getCpf());
-        System.out.println(gerente.getSalario());
+    Funcionario funcionario = new Funcionario();
+    funcionario.setSalario(3500);
 
-        gerente.setSenha(2222);
-        boolean autenticou = gerente.autentica(2222);
+    Funcionario editorDeVideo = new EditorDeVideo();
+    editorDeVideo.setSalario(4000);
 
-        System.out.println(autenticou);
+    ControleBonificacao controleBonificacao = new ControleBonificacao();
+    controleBonificacao.registra(gerente);
+    controleBonificacao.registra(funcionario);
+    controleBonificacao.registra(editorDeVideo);
 
-        System.out.println(gerente.getBonificacao());
+    System.out.println(controleBonificacao.getBonificaoGeral());
   }
 }
