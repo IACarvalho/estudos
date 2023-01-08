@@ -20,7 +20,7 @@ public class Desenvolvedor extends PessoaFisica implements Funcionario, Terceiri
 * É usado para reutilização de códico
 
 ## Enum
-"Classe" com campos que consistem em um conjunto fixo de constantes (static final). Ou seja valores pré definidos.
+* "Classe" com campos que consistem em um conjunto fixo de constantes (static final). Ou seja valores pré definidos.
 
 ## Notation (Anotações)
 * São "configurações" adicionais para o código. Por exemplo ao criar uma model para uma tabela de um banco de dados posso passar anotações para o java, por baixo dos panos, gerar a configuração necessária para funcionar corretamente.
