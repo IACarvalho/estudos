@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 
+// UncheckedExeptionsß
 public class App {
     public static void main(String[] args) throws Exception {
         boolean continueLoop = true;
